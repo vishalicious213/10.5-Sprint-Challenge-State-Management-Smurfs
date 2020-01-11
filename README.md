@@ -22,11 +22,35 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] What problem does the context API help solve?
-- [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
-- [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
-- [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
-- [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+- [x] What problem does the context API help solve?
+
+Context tries to provide a way to share data between components on a global scale, so that prop-drilling doesn't need to occur in order for many components to share the same props. It shares data outside of the parent-child manner in which props typically operate in React.
+
+
+- [x] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+actions: JavaScript objects that send data from an application to a store. They are the sole source of information for the store. They describe WHAT changes in a store, but not HOW state changes.
+
+reducers: JavaScript functions that take two arguments: current state and an action and returns a new, immutable state object. They essentially update state based on their associated actions.
+
+store: a JavaScript object that holds application state and allows it to be accessed and updated.
+
+
+- [x] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+Application state is global and lives in the store. It can be accessed by any component that can hook into it.
+
+Component state is local and lives in the given component. It can only be updated inside the parent component and passed down to child components via props.
+
+
+- [x] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+Redux-Thunk is middleware that handles asynchronous operations inside action creators. It intercepts actions before they are processed by reducers and lets other functions run with that data before its transformed by the reducer.
+
+
+- [x] What is your favorite state management system you've learned and this sprint? Please explain why!
+
+I haven't gotten to complete all of the recent projects in this unit, so I actually don't have a favorite state management system yet!
 
 ## Project Set Up
 
